@@ -6,6 +6,10 @@
 
 package pe.upeu.config;
 
+import java.sql.Connection;
+import java.sql.DriverManager;
+import javax.swing.JOptionPane;
+
 /**
  *
  * @author alum.fial8
@@ -19,18 +23,17 @@ public class Conexion {
     public static Connection getConexion(){
     try{
         Class.forName("com.mysql.jdbc.Driver");
-        if(conex=null){
+        if(conex==null){
             conex=DriverManager.getConnection(url,usuario,clave);
         }
         else{
             conex=null;
         }
-        }
+        
+       
     }catch(Exception e){
-        JOptionPane.ShowMessage(null, e);
+        JOptionPane.showMessageDialog(null,  e);
     }
-    return conex;
-    }
-    }
-    
+    return conex;    
+    }    
 }
