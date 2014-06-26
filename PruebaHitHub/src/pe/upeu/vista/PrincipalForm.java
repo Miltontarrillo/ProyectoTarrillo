@@ -16,7 +16,7 @@ public class PrincipalForm extends javax.swing.JFrame {
      * Creates new form PrincipalForm
      */
     public PrincipalForm() {
-        initComponents();
+        initComponents();        
     }
 
     /**

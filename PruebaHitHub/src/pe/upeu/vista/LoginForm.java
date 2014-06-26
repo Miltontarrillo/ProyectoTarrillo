@@ -8,6 +8,7 @@ package pe.upeu.vista;
 
 import java.sql.Connection;
 import javax.swing.JOptionPane;
+import pe.upeu.DAO.UsuarioDAO;
 import pe.upeu.config.Conexion;
 
 /**
@@ -106,12 +107,20 @@ public class LoginForm extends javax.swing.JFrame {
     }//GEN-LAST:event_txtUsuarioActionPerformed
 
     private void btnIngresarActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnIngresarActionPerformed
-            // TODO add your handling code here:
-        Connection cx;
-        cx=Conexion.getConexion();
-        if(cx!=null){
-            JOptionPane.showMessageDialog(null, "ALEX SE LA COME DOBLADA CON MAYONESA Y KETCHUP");
-        }
+            // TODO add your handling code here:        
+            
+            UsuarioDAO u= new UsuarioDAO();
+            
+        
+            String user=txtUsuario.getText();
+            String pass=txtClave.getText();
+           
+            if(u.validarUsuario(user,pass)==1){
+                PrincipalForm pf=new PrincipalForm();
+                pf.setVisible(true);
+            }else{
+                JOptionPane.showMessageDialog(null,"No se puede conectar");
+            }
     }//GEN-LAST:event_btnIngresarActionPerformed
 
     /**

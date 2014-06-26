@@ -23,7 +23,7 @@ public class UsuarioDAO {
     private String sql;
     private int op=0;
     public int validarUsuario(String user, String clave){
-        sql ="SELECT * FROM usuario WHERE use_2='"+user+"' AND pass='"+clave+"'";  
+        sql ="SELECT * FROM usuario WHERE user_2='"+user+"' AND pass='"+clave+"'";  
         try
         {
             cx= Conexion.getConexion();
